@@ -137,11 +137,6 @@ body {
    width: 18.5%;
 }
 .movie-swiper-slider {
-   & > a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 0;
-   }
 }
 .movie-swiper-slider:hover {
    & a img {
@@ -154,7 +149,13 @@ body {
    overflow: hidden;
    border-radius: 7px;
    box-sizing: border-box;
-   margin-bottom: 10px;
+   & a {
+      color: white;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+   }
    & a img {
       width: 100%;
       height: 100%;

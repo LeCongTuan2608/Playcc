@@ -137,24 +137,20 @@ body {
    width: 18.5%;
 }
 .movie-swiper-slider {
-   & > a {
+   & a {
       color: white;
       text-decoration: none;
-      padding: 10px 0;
+      padding: 5px;
+      width: 100%;
    }
 }
 .movie-swiper-slider:hover {
    & a img {
-      opacity: 0.5;
-      transform: scale(1.3);
-      transition: 0.7s;
+      opacity: 0.6;
+      transform: scaleX(1.5);
    }
 }
 .posters-movie {
-   overflow: hidden;
-   border-radius: 7px;
-   box-sizing: border-box;
-   margin-bottom: 10px;
    & a img {
       width: 100%;
       height: 100%;
