@@ -340,6 +340,11 @@ body {
    .page-top-content {
       font-size: 60%;
    }
+   .slick-slider {
+      & button {
+         display: none;
+      }
+   }
 }
 // custom button frameword ========= slick slide
 button {

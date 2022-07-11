@@ -258,24 +258,6 @@ body {
    }
 }
 @media screen and (max-width: 720px) {
-   .our-story-header {
-      padding: 0 20px;
-      & .our-story-logo {
-         & a {
-            font-size: 25px;
-            & ion-icon {
-               font-size: 35px;
-               margin-top: -5px;
-            }
-            & span {
-               margin-left: -5px;
-            }
-         }
-      }
-      & > a {
-         padding: 5px 10px;
-      }
-   }
    .page-top-content {
       font-size: 80%;
    }
@@ -318,27 +300,23 @@ body {
       align-items: center;
    }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 480px) {
    .our-story-header {
       padding: 0 20px;
       & .our-story-logo {
          & a {
-            font-size: 20px;
-            & ion-icon {
-               font-size: 35px;
-               margin-top: -5px;
-            }
-            & span {
-               margin-left: -5px;
-            }
+            font-size: 25px;
+         }
+         & a ion-icon {
+            font-size: 35px;
          }
       }
       & > a {
-         padding: 5px 5px;
+         padding: 5px 10px;
       }
    }
    .page-top-content {
-      font-size: 60%;
+      font-size: 50%;
    }
 }
 // custom button frameword ========= slick slide
