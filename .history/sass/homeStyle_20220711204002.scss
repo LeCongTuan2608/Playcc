@@ -199,7 +199,9 @@ body {
          color: rgb(221, 119, 23);
       }
    }
-
+   & a ion-icon:first {
+      padding: 5px 0;
+   }
    & a ion-icon {
       vertical-align: middle;
       padding: 5px 10px;
@@ -210,9 +212,6 @@ body {
 .footer-column-left {
    display: flex;
    flex-direction: column;
-   & a ion-icon:first-child {
-      padding: 5px 0;
-   }
 }
 .footer-column-center {
    & .container-text {

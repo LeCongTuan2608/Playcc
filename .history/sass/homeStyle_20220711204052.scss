@@ -210,7 +210,7 @@ body {
 .footer-column-left {
    display: flex;
    flex-direction: column;
-   & a ion-icon:first-child {
+   & a ion-icon:first {
       padding: 5px 0;
    }
 }

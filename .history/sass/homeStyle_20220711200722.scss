@@ -33,14 +33,14 @@ body {
       color: white;
    }
 }
-.our-story-header {
-   & > a {
+.our-story-login {
+   background-color: rgb(216, 75, 75);
+   padding: 10px 20px;
+   border-radius: 7px;
+   cursor: pointer;
+   & a {
       text-decoration: none;
       color: white;
-      padding: 10px 20px;
-      border-radius: 7px;
-      background-color: rgb(216, 75, 75);
-      cursor: pointer;
    }
    & ion-icon {
       font-size: 25px;
@@ -186,7 +186,7 @@ body {
    color: white;
    display: flex;
    justify-content: center;
-   padding: 30px 0;
+   padding: 50px 0;
 }
 .footer-navigation-row {
    display: flex;
@@ -199,20 +199,15 @@ body {
          color: rgb(221, 119, 23);
       }
    }
-
    & a ion-icon {
       vertical-align: middle;
       padding: 5px 10px;
-      margin-top: -4px;
       font-size: 20px;
    }
 }
 .footer-column-left {
    display: flex;
    flex-direction: column;
-   & a ion-icon:first-child {
-      padding: 5px 0;
-   }
 }
 .footer-column-center {
    & .container-text {
@@ -272,28 +267,6 @@ body {
    .middle-page-mid {
       padding: 3%;
    }
-   .footer {
-      padding: 0;
-   }
-   .footer-navigation-row {
-      flex-direction: column;
-   }
-   .footer-column-left {
-      flex-direction: row;
-      justify-content: space-around;
-      padding: 20px 0;
-      border-bottom: 2px solid rgba(40, 40, 40, 0.829);
-   }
-   .footer-column-center {
-      margin: 20px 0;
-      & .container-text {
-         text-align: center;
-         padding: 0 20px;
-      }
-   }
-   .footer-column-right {
-      align-items: center;
-   }
 }
 @media screen and (max-width: 480px) {
    .our-story-header {
@@ -301,12 +274,15 @@ body {
       & .our-story-logo a ion-icon {
          font-size: 50px;
       }
-      & > a {
-         padding: 5px 10px;
+      & .our-story-login {
+         padding: 5px;
       }
    }
    .page-top-content {
       font-size: 50%;
+   }
+   .footer-navigation-row {
+      flex-direction: column;
    }
 }
 // custom button frameword ========= slick slide
