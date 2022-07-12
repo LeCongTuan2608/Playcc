@@ -14,16 +14,44 @@ body {
 .our-story-header-wrapper {
   position: absolute;
   width: 100%;
-  height: 80px;
+  height: 60px;
   z-index: 10;
 }
 
+.out-fixed {
+  position: fixed;
+  background-color: #000000ac;
+  transition: 1s linear;
+  animation: top-down ease-in 0.3s;
+}
+
+@keyframes top-down {
+  0% {
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 .our-story-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
   padding: 0 40px;
+}
+.our-story-header > a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 7px;
+  background-color: #d84b4b;
+  cursor: pointer;
+  user-select: none;
+}
+.our-story-header ion-icon {
+  font-size: 25px;
+  vertical-align: middle;
 }
 
 .our-story-logo a {
@@ -33,23 +61,70 @@ body {
 }
 .our-story-logo a span {
   margin-left: -10px;
+  user-select: none;
 }
 .our-story-logo a > ion-icon {
   font-size: 50px;
   margin-top: -10px;
 }
 
-.our-story-header > a {
+.navbar-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+.category-menu .box-menu {
+  display: none;
+}
+.category-menu ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.category-menu ul li {
+  list-style-type: none;
+}
+.category-menu ul li a {
   text-decoration: none;
   color: white;
-  padding: 10px 20px;
+  padding: 21.2px 20px;
+  border: none;
+}
+.category-menu ul li a:hover {
+  background-color: rgba(136, 136, 136, 0.795);
+}
+
+.search {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.search input {
+  width: 60%;
+  border: none;
   border-radius: 7px;
-  background-color: #d84b4b;
+  background-color: #9484845c;
+  padding: 10px 10px;
+  color: white;
+}
+.search input::placeholder {
+  color: #d2d2d2;
+}
+.search input:focus {
+  border-color: rgba(164, 164, 164, 0.71);
+}
+.search ion-icon {
+  margin-left: 10px;
+  color: white;
+  padding: 5px;
   cursor: pointer;
 }
-.our-story-header ion-icon {
-  font-size: 25px;
-  vertical-align: middle;
+.search ion-icon:active {
+  color: #d84b4b;
+  background-color: rgba(210, 210, 210, 0.416);
+  border-radius: 6px;
 }
 
 .middle-page {
@@ -100,7 +175,7 @@ body {
 
 .middle-page-mid {
   padding: 100px 60px;
-  background-color: #000000;
+  background-color: #000000eb;
 }
 
 .middle-page-mid-posters {
@@ -158,10 +233,11 @@ body {
 .title a {
   text-decoration: none;
   color: white;
+  display: inline-block;
 }
 
 .container-swiper {
-  margin: 0 10px;
+  margin-right: 20px;
 }
 
 .movie-swiper-slider > a {
@@ -250,6 +326,44 @@ body {
   }
 }
 @media screen and (max-width: 1024px) {
+  .navbar-menu {
+    width: 55%;
+  }
+
+  .category-menu {
+    margin-left: 20px;
+    position: relative;
+  }
+  .category-menu ul {
+    display: none;
+  }
+  .category-menu ul li a {
+    padding: 10px;
+    display: block;
+  }
+  .category-menu .box-menu {
+    display: block;
+    color: white;
+  }
+  .category-menu .box-menu span {
+    padding: 21.2px 10px;
+  }
+  .category-menu:hover span {
+    background-color: rgba(136, 136, 136, 0.795);
+  }
+  .category-menu:hover ul {
+    display: block;
+    position: absolute;
+    width: 200px;
+    top: 165%;
+    left: 30%;
+    background-color: #000000d0;
+  }
+
+  .search input {
+    display: block;
+  }
+
   .page-top-content {
     font-size: 20px;
   }
@@ -282,8 +396,12 @@ body {
     padding: 5px 10px;
   }
 
+  .search input {
+    display: none;
+  }
+
   .page-top-content {
-    font-size: 80%;
+    font-size: 60%;
   }
 
   h2 {
@@ -349,8 +467,35 @@ body {
     padding: 5px 5px;
   }
 
+  .category-menu {
+    margin: 0;
+  }
+  .category-menu ul {
+    position: absolute;
+    top: 165%;
+    left: 0% !important;
+  }
+
   .page-top-content {
     font-size: 60%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .our-story-header {
+    padding: 0 10px;
+  }
+
+  .category-menu ul li a {
+    padding: 5px;
+  }
+
+  .search ion-icon {
+    margin-left: 0px;
+    margin-right: 5px;
+  }
+
+  .page-top-content {
+    font-size: 50%;
   }
 }
 button {
