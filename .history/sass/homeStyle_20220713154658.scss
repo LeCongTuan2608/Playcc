@@ -539,11 +539,10 @@ button {
    box-sizing: border-box;
    width: 50px;
    height: 50px;
-   border: 2px solid rgb(89, 140, 217);
+   border: 2px solid #fff;
    position: absolute;
-   top: 50%;
    left: 50%;
-   transform: translate(-50%, -50%);
+   top: 50%;
    animation: rotationBreak 3s ease-in-out infinite alternate;
 }
 .loader::after {

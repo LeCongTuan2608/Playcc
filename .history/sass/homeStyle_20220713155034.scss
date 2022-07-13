@@ -547,7 +547,7 @@ button {
    animation: rotationBreak 3s ease-in-out infinite alternate;
 }
 .loader::after {
-   content: 'Đợi xí';
+   content: '';
    border-color: #ff3d00;
    animation-direction: alternate-reverse;
 }

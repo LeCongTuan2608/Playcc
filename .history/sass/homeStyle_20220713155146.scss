@@ -549,7 +549,7 @@ button {
 .loader::after {
    content: 'Đợi xí';
    border-color: #ff3d00;
-   animation-direction: alternate-reverse;
+   // animation-direction: alternate-reverse;
 }
 
 @keyframes rotationBreak {

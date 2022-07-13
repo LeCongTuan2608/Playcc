@@ -532,6 +532,7 @@ button {
    z-index: 15;
    background-color: #ecececf0;
    transition: 1s ease;
+   display: flex;
 }
 .loader::after,
 .loader::before {
