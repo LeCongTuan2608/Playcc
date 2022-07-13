@@ -76,25 +76,55 @@ body {
   width: 70%;
 }
 
-.category-menu .box-menu {
-  display: none;
-}
-.category-menu ul {
+.menu ul {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-.category-menu ul li {
+.menu ul li {
   list-style-type: none;
+  padding: 17.5px 20px;
+  border: none;
+  position: relative;
+  font-weight: 700;
 }
-.category-menu ul li a {
+.menu ul li .menu-category,
+.menu ul li .menu-country {
+  display: none;
+}
+.menu ul li a,
+.menu ul li span {
   text-decoration: none;
   color: white;
-  padding: 21.2px 20px;
-  border: none;
 }
-.category-menu ul li a:hover {
-  background-color: rgba(136, 136, 136, 0.795);
+.menu ul li:hover {
+  background-color: #939393c8;
+}
+.menu ul li:hover > a,
+.menu ul li:hover > span {
+  color: #ffce3d;
+}
+.menu ul li:hover .menu-category,
+.menu ul li:hover .menu-country {
+  display: block;
+}
+.menu .list {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  background-color: rgba(97, 97, 97, 0.708);
+}
+.menu .list ul {
+  display: flex;
+  flex-direction: column;
+}
+.menu .list ul li {
+  padding: 10px 20px;
+}
+.menu .list ul li a {
+  width: 100%;
+  display: inline-block;
 }
 
 .search {
@@ -332,28 +362,21 @@ body {
     width: 55%;
   }
 
-  .category-menu {
+  .menu {
     margin-left: 20px;
     position: relative;
   }
-  .category-menu ul {
+  .menu ul {
     display: none;
   }
-  .category-menu ul li a {
+  .menu ul li a {
     padding: 10px;
     display: block;
   }
-  .category-menu .box-menu {
-    display: block;
-    color: white;
-  }
-  .category-menu .box-menu span {
-    padding: 21.2px 10px;
-  }
-  .category-menu:hover span {
+  .menu:hover span {
     background-color: rgba(136, 136, 136, 0.795);
   }
-  .category-menu:hover ul {
+  .menu:hover ul {
     display: block;
     position: absolute;
     width: 200px;
@@ -469,10 +492,10 @@ body {
     padding: 5px 5px;
   }
 
-  .category-menu {
+  .menu {
     margin: 0;
   }
-  .category-menu ul {
+  .menu ul {
     position: absolute;
     top: 165%;
     left: 0% !important;
@@ -487,7 +510,7 @@ body {
     padding: 0 10px;
   }
 
-  .category-menu ul li a {
+  .menu ul li a {
     padding: 5px;
   }
 

@@ -79,19 +79,19 @@ body {
    width: 70%;
 }
 .menu {
-   & ul {
+   & > ul {
       display: flex;
       width: 100%;
       justify-content: space-between;
-      & li {
+      list-style-type: none;
+      & > li {
          list-style-type: none;
          padding: 17.5px 20px;
          border: none;
          position: relative;
-         font-weight: 700;
          & .menu-category,
          .menu-country {
-            display: none;
+            // display: none;
          }
          & a,
          span {
@@ -100,11 +100,7 @@ body {
          }
       }
       & li:hover {
-         & > a,
-         > span {
-            color: #ffce3d;
-         }
-         background-color: #939393c8;
+         background-color: rgba(136, 136, 136, 0.795);
          & .menu-category,
          .menu-country {
             display: block;
@@ -116,15 +112,14 @@ body {
       top: 100%;
       left: 0%;
       width: 100%;
-      background-color: rgba(97, 97, 97, 0.708);
+      background-color: rgba(85, 85, 85, 0.67);
       & ul {
          display: flex;
          flex-direction: column;
          // padding: 0 20px;
          & li {
-            padding: 10px 20px;
             & a {
-               width: 100%;
+               padding: 0;
                display: inline-block;
             }
          }

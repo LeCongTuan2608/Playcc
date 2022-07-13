@@ -79,53 +79,38 @@ body {
    width: 70%;
 }
 .menu {
-   & ul {
+   & > ul {
       display: flex;
       width: 100%;
       justify-content: space-between;
-      & li {
+      & > li {
          list-style-type: none;
-         padding: 17.5px 20px;
-         border: none;
-         position: relative;
-         font-weight: 700;
-         & .menu-category,
-         .menu-country {
-            display: none;
-         }
          & a,
          span {
             text-decoration: none;
             color: white;
+            padding: 21.2px 20px;
+            border: none;
          }
-      }
-      & li:hover {
-         & > a,
-         > span {
-            color: #ffce3d;
-         }
-         background-color: #939393c8;
-         & .menu-category,
-         .menu-country {
-            display: block;
+         & > a:hover,
+         > span:hover {
+            background-color: rgba(136, 136, 136, 0.795);
          }
       }
    }
    & .list {
       position: absolute;
       top: 100%;
-      left: 0%;
-      width: 100%;
-      background-color: rgba(97, 97, 97, 0.708);
+      background-color: rgba(85, 85, 85, 0.67);
+      // display: none;
       & ul {
          display: flex;
          flex-direction: column;
          // padding: 0 20px;
          & li {
-            padding: 10px 20px;
+            margin: 15px 0;
             & a {
-               width: 100%;
-               display: inline-block;
+               padding: 15px 20px;
             }
          }
       }

@@ -78,60 +78,30 @@ body {
    align-items: center;
    width: 70%;
 }
-.menu {
+.category-menu {
+   & .box-menu {
+      display: none;
+   }
    & ul {
       display: flex;
       width: 100%;
       justify-content: space-between;
       & li {
          list-style-type: none;
-         padding: 17.5px 20px;
-         border: none;
-         position: relative;
-         font-weight: 700;
-         & .menu-category,
-         .menu-country {
-            display: none;
-         }
          & a,
          span {
             text-decoration: none;
             color: white;
+            padding: 21.2px 20px;
+            border: none;
          }
-      }
-      & li:hover {
-         & > a,
-         > span {
-            color: #ffce3d;
-         }
-         background-color: #939393c8;
-         & .menu-category,
-         .menu-country {
-            display: block;
-         }
-      }
-   }
-   & .list {
-      position: absolute;
-      top: 100%;
-      left: 0%;
-      width: 100%;
-      background-color: rgba(97, 97, 97, 0.708);
-      & ul {
-         display: flex;
-         flex-direction: column;
-         // padding: 0 20px;
-         & li {
-            padding: 10px 20px;
-            & a {
-               width: 100%;
-               display: inline-block;
-            }
+         & a:hover,
+         span:hover {
+            background-color: rgba(136, 136, 136, 0.795);
          }
       }
    }
 }
-
 .search {
    display: flex;
    flex: 1;
@@ -364,7 +334,7 @@ body {
    .navbar-menu {
       width: 55%;
    }
-   .menu {
+   .category-menu {
       margin-left: 20px;
       position: relative;
       & ul {
@@ -374,13 +344,13 @@ body {
             display: block;
          }
       }
-      // & .box-menu {
-      //    display: block;
-      //    color: white;
-      //    & span {
-      //       padding: 21.2px 10px;
-      //    }
-      // }
+      & .box-menu {
+         display: block;
+         color: white;
+         & span {
+            padding: 21.2px 10px;
+         }
+      }
       &:hover {
          & span {
             background-color: rgba(136, 136, 136, 0.795);
@@ -503,7 +473,7 @@ body {
          padding: 5px 5px;
       }
    }
-   .menu {
+   .category-menu {
       margin: 0;
       & ul {
          position: absolute;
@@ -519,7 +489,7 @@ body {
    .our-story-header {
       padding: 0 10px;
    }
-   .menu ul li a {
+   .category-menu ul li a {
       padding: 5px;
    }
    .search {

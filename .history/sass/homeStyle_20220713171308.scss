@@ -88,7 +88,6 @@ body {
          padding: 17.5px 20px;
          border: none;
          position: relative;
-         font-weight: 700;
          & .menu-category,
          .menu-country {
             display: none;
@@ -102,9 +101,9 @@ body {
       & li:hover {
          & > a,
          > span {
-            color: #ffce3d;
+            color: #ed6f6f;
          }
-         background-color: #939393c8;
+         background-color: #9e6611;
          & .menu-category,
          .menu-country {
             display: block;
@@ -116,7 +115,7 @@ body {
       top: 100%;
       left: 0%;
       width: 100%;
-      background-color: rgba(97, 97, 97, 0.708);
+      background-color: rgba(85, 85, 85, 0.67);
       & ul {
          display: flex;
          flex-direction: column;
