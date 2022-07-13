@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -520,6 +521,100 @@ button {
   top: 50%;
   transform: translateY(-50%);
   right: -0.5%;
+}
+
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 15;
+  background-color: #ecececf0;
+  transition: 1s ease;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotationBreak 3s ease-in-out infinite alternate;
+}
+
+.loader::after {
+  content: "Đợi xí";
+  border-color: #ff3d00;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes rotationBreak {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.scroll-top {
+  width: 50px;
+  height: 50px;
+  background: rgba(202, 203, 204, 0.597);
+  display: inline-block;
+  position: fixed;
+  box-sizing: border-box;
+  animation: bump 0.4s linear infinite alternate;
+  z-index: 10;
+  bottom: 7%;
+  right: 3%;
+  border-radius: 100rem;
+  cursor: pointer;
+  display: none;
+}
+
+.scroll-top::after {
+  content: "";
+  box-sizing: border-box;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  border: 20px solid transparent;
+  border-bottom-color: #3d3d9c;
+}
+
+.scroll-top::before {
+  content: "";
+  height: 10px;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  border: 8px solid transparent;
+  background-color: #3d3d9c;
+}
+
+@keyframes bump {
+  0% {
+    transform: translate(-50%, 5px);
+  }
+  100% {
+    transform: translate(-50%, -5px);
+  }
 }
 
 /*# sourceMappingURL=homeStyle.css.map */
