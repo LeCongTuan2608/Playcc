@@ -38,7 +38,7 @@ const slideMovieStart = async () => {
 // main run
 const main = async () => {
    await showLoading();
-   for (let index = 1; index <= 15; index++) {
+   for (let index = 1; index <= 20; index++) {
       await getMoviePageFromApi(index);
    }
    // console.error(arrayList);

@@ -20,7 +20,7 @@ export async function getMovieInforFromApi(movie) {
       await filterCategory(arrayList, 'Hành Động', '.category-action', 'Nhật Bản');
       await filterCategory(arrayList, 'Kinh Dị', '.category-horror');
       await filterCategory(arrayList, 'Hài Hước', '.category-comedy', 'Nhật Bản');
-      await filterCategory(arrayList, 'Viễn Tưởng', '.category-ScienceFiction', 'Nhật Bản');
+      await filterCategory(arrayList, 'Viễn Tưởng', '.category-ScienceFiction', 'Trung Quốc');
       await filterCategory(arrayList, 'Phim 18+', '.category-Movie18');
    } catch (error) {
       console.error({ error });
