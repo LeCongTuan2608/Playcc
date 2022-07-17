@@ -137,5 +137,8 @@
          object-fit: cover;
          color: white;
       }
+      & img:default {
+         padding: 20px 0;
+      }
    }
 }

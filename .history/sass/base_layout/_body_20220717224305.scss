@@ -137,5 +137,8 @@
          object-fit: cover;
          color: white;
       }
+      & img:target-text {
+         padding: 20px 0;
+      }
    }
 }

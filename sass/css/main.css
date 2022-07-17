@@ -279,11 +279,15 @@
   box-sizing: border-box;
   margin-bottom: 10px;
 }
+.posters-movie a {
+  text-decoration: none;
+}
 .posters-movie a img {
   width: 100%;
   min-height: 215px;
   border-radius: 7px;
   object-fit: cover;
+  color: white;
 }
 
 .footer {

@@ -128,14 +128,12 @@
    border-radius: 7px;
    box-sizing: border-box;
    margin-bottom: 10px;
-   & a {
+   & a img {
+      width: 100%;
+      min-height: 215px;
+      border-radius: 7px;
+      object-fit: cover;
+      color: white;
       text-decoration: none;
-      & img {
-         width: 100%;
-         min-height: 215px;
-         border-radius: 7px;
-         object-fit: cover;
-         color: white;
-      }
    }
 }

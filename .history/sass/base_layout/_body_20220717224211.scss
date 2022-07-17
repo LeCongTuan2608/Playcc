@@ -137,5 +137,8 @@
          object-fit: cover;
          color: white;
       }
+      & img::spelling-error {
+         padding: 20px 0;
+      }
    }
 }
