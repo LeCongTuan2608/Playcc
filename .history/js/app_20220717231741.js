@@ -37,11 +37,10 @@ const slideMovieStart = async () => {
 // slideMovieStart();
 // main run
 const main = async () => {
+   let randomNumber = Math.floor(Math.random() * 50) + 3;
    await showLoading();
-   for (let index = 1; index <= 10; index++) {
-      let randomNumber = Math.floor(Math.random() * 400) + 4;
+   for (let index = 1; index <= 15; index++) {
       await getMoviePageFromApi(randomNumber);
-      console.log(randomNumber);
    }
    // console.error(arrayList);
 };

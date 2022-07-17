@@ -38,8 +38,8 @@ const slideMovieStart = async () => {
 // main run
 const main = async () => {
    await showLoading();
-   for (let index = 1; index <= 10; index++) {
-      let randomNumber = Math.floor(Math.random() * 400) + 4;
+   for (let index = 1; index <= 15; index++) {
+      let randomNumber = Math.floor(Math.random() * 500) + 3;
       await getMoviePageFromApi(randomNumber);
       console.log(randomNumber);
    }
