@@ -417,6 +417,10 @@ button {
     margin: 50px 0 50px;
     padding: 0 5%;
   }
+
+  .category-list {
+    padding: 0 5%;
+  }
 }
 @media screen and (max-width: 1024px) {
   .navbar-menu {
@@ -463,8 +467,12 @@ button {
     margin: 50px 0 50px;
     padding: 0 2%;
   }
+
+  .category-list {
+    padding: 0 2%;
+  }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 766px) {
   .our-story-header {
     padding: 0 20px;
   }
@@ -533,6 +541,14 @@ button {
 
   .footer-column-right {
     align-items: center;
+  }
+
+  .body-category {
+    padding: 100px 3%;
+  }
+
+  .category-list {
+    padding: 0;
   }
 }
 @media screen and (max-width: 420px) {
