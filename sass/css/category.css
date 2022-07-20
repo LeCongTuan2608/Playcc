@@ -363,6 +363,9 @@ body {
 .category-list {
   padding: 0 10%;
 }
+.category-list .title {
+  color: white;
+}
 
 .loading {
   display: none;
