@@ -401,6 +401,7 @@ body {
 .movie-content .content p {
   margin-top: 10px;
   color: rgba(255, 255, 255, 0.548);
+  line-height: 1.3rem;
 }
 
 .infor-publisher {
@@ -429,6 +430,7 @@ body {
 }
 .watch-movie .video-container iframe {
   position: absolute;
+  border-radius: 7px;
   top: 0%;
   width: 100%;
   height: 100%;
