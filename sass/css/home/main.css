@@ -200,7 +200,8 @@
 
 .middle-page-mid {
   padding: 100px 60px;
-  background-color: #000000eb;
+  background-image: linear-gradient(to top, #1e3c72 0%, #2a3345 1%, #002f81 100%);
+  background-attachment: fixed;
 }
 
 .middle-page-mid-posters {
@@ -709,26 +710,12 @@ body {
   display: none;
 }
 
-.scroll-top::after {
-  content: "";
-  box-sizing: border-box;
-  left: 50%;
-  bottom: 50%;
-  transform: translate(-50%, 0);
+.scroll-top ion-icon {
+  font-size: 30px;
   position: absolute;
-  border: 20px solid transparent;
-  border-bottom-color: #3d3d9c;
-}
-
-.scroll-top::before {
-  content: "";
-  height: 10px;
+  top: 45%;
   left: 50%;
-  bottom: 10%;
-  transform: translate(-50%, 0);
-  position: absolute;
-  border: 8px solid transparent;
-  background-color: #3d3d9c;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes bump {
