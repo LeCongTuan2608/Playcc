@@ -83,9 +83,7 @@ const renderVideo = async (urlVideo) => {
       return;
    }
    if (urlVideo === '') {
-      let htmls = `
-      <span>Link này hỏng rồi các bác ơi <ion-icon name="sad-outline"></ion-icon></span>`;
-      videoContainer.insertAdjacentHTML('afterbegin', htmls);
+      return;
    } else {
       let htmls = `
       <iframe class="video" src="${urlVideo}"

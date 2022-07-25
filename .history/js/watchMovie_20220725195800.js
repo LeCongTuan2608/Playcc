@@ -82,19 +82,13 @@ const renderVideo = async (urlVideo) => {
       console.error("Watch movie doesn't exit...");
       return;
    }
-   if (urlVideo === '') {
-      let htmls = `
-      <span>Link này hỏng rồi các bác ơi <ion-icon name="sad-outline"></ion-icon></span>`;
-      videoContainer.insertAdjacentHTML('afterbegin', htmls);
-   } else {
-      let htmls = `
-      <iframe class="video" src="${urlVideo}"
-         title="YouTube video player" frameborder="0"
-         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-         allowfullscreen>
-      </iframe>`;
-      videoContainer.insertAdjacentHTML('afterbegin', htmls);
-   }
+   let htmls = `
+            <iframe class="video" src="${urlVideo}"
+               title="YouTube video player" frameborder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowfullscreen>
+            </iframe>`;
+   videoContainer.insertAdjacentHTML('afterbegin', htmls);
 };
 // render title of the movie
 const titleMovie = document.querySelector('.movie-title');

@@ -99,14 +99,6 @@ body {
          position: absolute;
          font-size: 20px;
          color: white;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         & ion-icon {
-            vertical-align: middle;
-            font-size: 30px;
-            color: rgba(255, 0, 0, 0.818);
-         }
       }
    }
    & .movie-title {

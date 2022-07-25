@@ -5,6 +5,7 @@ window.addEventListener('scroll', function () {
       header.classList.add('out-fixed');
       btnScrollTop.style.display = 'block';
    } else if (scrolling < 200) {
+      // header.classList.toggle('out-fixed');
       header.classList.remove('out-fixed');
       btnScrollTop.style.display = 'none';
    }

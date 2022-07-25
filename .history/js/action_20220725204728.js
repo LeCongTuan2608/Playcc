@@ -5,6 +5,7 @@ window.addEventListener('scroll', function () {
       header.classList.add('out-fixed');
       btnScrollTop.style.display = 'block';
    } else if (scrolling < 200) {
+      // header.classList.toggle('out-fixed');
       header.classList.remove('out-fixed');
       btnScrollTop.style.display = 'none';
    }
@@ -25,11 +26,11 @@ const getCategories = async () => {
 };
 getCategories();
 // click menu country
-const Countries = document.querySelectorAll('.country ul li a');
+const CountryOfMovies = document.querySelectorAll('.country ul li a');
 const getCountryOfMovies = async () => {
-   for (let i = 0; i < Countries.length; i++) {
-      Countries[i].onclick = async () => {
-         localStorage.setItem('getCountry', JSON.stringify(Countries[i].textContent));
+   for (let i = 0; i < CountryOfMovies.length; i++) {
+      CountryOfMovies[i].onclick = async () => {
+         localStorage.setItem('CountryOfMovies', JSON.stringify(CountryOfMovies[i].textContent));
          localStorage.setItem('getCategory', JSON.stringify(''));
       };
    }

@@ -3,9 +3,9 @@ import { showLoading, hideLoading } from './exports.js';
 import { renderListMovie } from './exports.js';
 import { getMovie } from './exports.js';
 let getCategory = JSON.parse(localStorage.getItem('getCategory'));
-let getCountry = JSON.parse(localStorage.getItem('getCountry'));
+let getTheMoviesYear = JSON.parse(localStorage.getItem('getTheMoviesYear'));
+console.log(getTheMoviesYear);
 console.log(getCategory);
-console.log(getCountry);
 //render title thể loại
 const renderTitle = async () => {
    const titleCategory = document.querySelector('.title');
@@ -17,13 +17,13 @@ const renderTitle = async () => {
       let htmls = `<h2>Thể loại: ${getCategory}</h2>`;
       return titleCategory.insertAdjacentHTML('beforeend', htmls);
    } else {
-      let htmls = `<h2>Quốc gia: ${getCountry}</h2>`;
+      let htmls = `<h2>Quốc gia: ${getTheMoviesYear}</h2>`;
       return titleCategory.insertAdjacentHTML('beforeend', htmls);
    }
 };
 renderTitle();
 //lọc thể loại
-const filterTheMovies = async (listMovie, listSelector) => {
+async function filterTheMovies(listMovie, listSelector) {
    const arrayListMovie = [];
    const lengthMovie = listMovie.length;
    if (getCategory !== '') {
@@ -39,19 +39,9 @@ const filterTheMovies = async (listMovie, listSelector) => {
             }
          }
       }
-   } else {
-      for (let i = 0; i < lengthMovie; i++) {
-         const country = listMovie[i].movie.country;
-         const countryLength = country.length;
-         for (let j = 0; j < countryLength; j++) {
-            if (country[j].name == getCountry) {
-               arrayListMovie.push(listMovie[i]);
-            }
-         }
-      }
    }
    await renderListMovie(arrayListMovie, listSelector);
-};
+}
 //call api lần 2
 const arrayList = [];
 async function getMovieInforFromApi(movie) {

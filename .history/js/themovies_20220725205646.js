@@ -23,7 +23,7 @@ const renderTitle = async () => {
 };
 renderTitle();
 //lọc thể loại
-const filterTheMovies = async (listMovie, listSelector) => {
+async function filterTheMovies(listMovie, listSelector) {
    const arrayListMovie = [];
    const lengthMovie = listMovie.length;
    if (getCategory !== '') {
@@ -51,7 +51,7 @@ const filterTheMovies = async (listMovie, listSelector) => {
       }
    }
    await renderListMovie(arrayListMovie, listSelector);
-};
+}
 //call api lần 2
 const arrayList = [];
 async function getMovieInforFromApi(movie) {

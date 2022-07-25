@@ -88,11 +88,11 @@ export const renderListMovie = async (data, listSelector) => {
    listMovie.innerHTML = await htmls.join('');
    return arrTheMovies;
 };
-export const getMovie = async (TheMovies) => {
+export const getMovie= async(TheMovies) {
    for (let i = 0; i < TheMovies.length; i++) {
       const getID = TheMovies[i].getAttribute('id');
       TheMovies[i].onclick = async () => {
          localStorage.setItem('getID', JSON.stringify(getID));
       };
    }
-};
+}

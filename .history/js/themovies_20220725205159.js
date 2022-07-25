@@ -23,9 +23,10 @@ const renderTitle = async () => {
 };
 renderTitle();
 //lọc thể loại
-const filterTheMovies = async (listMovie, listSelector) => {
+async function filterTheMovies(listMovie, listSelector) {
    const arrayListMovie = [];
    const lengthMovie = listMovie.length;
+   console.log(listMovie);
    if (getCategory !== '') {
       for (let i = 0; i < lengthMovie; i++) {
          const cate = listMovie[i].movie.category;
@@ -44,14 +45,14 @@ const filterTheMovies = async (listMovie, listSelector) => {
          const country = listMovie[i].movie.country;
          const countryLength = country.length;
          for (let j = 0; j < countryLength; j++) {
-            if (country[j].name == getCountry) {
+            if (country[j].name == getCategory) {
                arrayListMovie.push(listMovie[i]);
             }
          }
       }
    }
    await renderListMovie(arrayListMovie, listSelector);
-};
+}
 //call api lần 2
 const arrayList = [];
 async function getMovieInforFromApi(movie) {

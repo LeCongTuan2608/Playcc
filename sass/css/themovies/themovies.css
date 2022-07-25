@@ -200,7 +200,8 @@
 
 .middle-page-mid {
   padding: 100px 60px;
-  background-color: #000000eb;
+  background-image: linear-gradient(to top, #1e3c72 0%, #2a3345 1%, #002f81 100%);
+  background-attachment: fixed;
 }
 
 .middle-page-mid-posters {
@@ -530,6 +531,10 @@ button {
   .infor-publisher {
     flex: 20%;
   }
+
+  .ep-container ul {
+    grid-template-columns: repeat(8, 1fr);
+  }
 }
 @media screen and (max-width: 800px) {
   .our-story-header {
@@ -635,7 +640,7 @@ button {
   }
 
   .ep-container ul {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 @media screen and (max-width: 570px) {
@@ -647,7 +652,7 @@ button {
     grid-template-columns: repeat(5, 1fr);
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .our-story-header {
     padding: 0 20px;
   }
@@ -685,6 +690,10 @@ button {
   .movie-content .content {
     padding: 20px 0;
   }
+
+  .ep-container ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media screen and (max-width: 380px) {
   .our-story-header {
@@ -703,11 +712,15 @@ button {
   .page-top-content {
     font-size: 50%;
   }
+
+  .ep-container ul {
+    grid-template-columns: repeat(3.5, 1fr);
+  }
 }
 @media screen and (max-width: 320px) {
   .ep-container ul {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/*# sourceMappingURL=category.css.map */
+/*# sourceMappingURL=themovies.css.map */

@@ -5,6 +5,7 @@ window.addEventListener('scroll', function () {
       header.classList.add('out-fixed');
       btnScrollTop.style.display = 'block';
    } else if (scrolling < 200) {
+      // header.classList.toggle('out-fixed');
       header.classList.remove('out-fixed');
       btnScrollTop.style.display = 'none';
    }
@@ -24,14 +25,14 @@ const getCategories = async () => {
    }
 };
 getCategories();
-// click menu country
-const Countries = document.querySelectorAll('.country ul li a');
-const getCountryOfMovies = async () => {
-   for (let i = 0; i < Countries.length; i++) {
-      Countries[i].onclick = async () => {
-         localStorage.setItem('getCountry', JSON.stringify(Countries[i].textContent));
+// click menu year
+const TheMoviesYear = document.querySelectorAll('.country ul li a');
+const getTheMoviesYear = async () => {
+   for (let i = 0; i < TheMoviesYear.length; i++) {
+      TheMoviesYear[i].onclick = async () => {
+         localStorage.setItem('getTheMoviesYear', JSON.stringify(TheMoviesYear[i].textContent));
          localStorage.setItem('getCategory', JSON.stringify(''));
       };
    }
 };
-getCountryOfMovies();
+getTheMoviesYear();
