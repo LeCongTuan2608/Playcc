@@ -376,6 +376,7 @@ body {
   height: 100%;
   font-size: 100%;
   font-family: Netflix Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  overflow: hidden;
 }
 
 .scroll-top {
@@ -418,7 +419,7 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.885);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .child-loading {
@@ -432,7 +433,9 @@ body {
   border: 2px solid #3b83a4;
   border-radius: 20px;
   height: 32px;
-  width: 150px;
+  width: 200px;
+  z-index: 10;
+  box-shadow: black 0px 20px 30px -8px;
 }
 
 .child-loading:before {
@@ -443,7 +446,7 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #e89212;
+  background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
   animation: ballbns 3s ease-in-out infinite;
 }
 
@@ -452,15 +455,21 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 12;
   font-weight: 600;
+  width: 250px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+.child-loading-text span {
+  display: block;
+  text-align: center;
 }
 
 @keyframes ballbns {
   0% {
     left: 0;
     transform: translateX(0%);
-    box-shadow: -5px 0 0 -1px rgba(255, 179, 1, 0.9), -10px 0 0 -2px rgba(255, 179, 1, 0.8), -15px 0 0 -4px rgba(255, 179, 1, 0.6), -20px 0 0 -6px rgba(255, 179, 1, 0.4), -25px 0 0 -8px rgba(255, 179, 1, 0.2);
+    box-shadow: -5px 0 0 -1px rgba(1, 65, 255, 0.9), -10px 0 0 -2px rgba(1, 65, 255, 0.8), -15px 0 0 -4px rgba(1, 65, 255, 0.6), -20px 0 0 -6px rgba(1, 65, 255, 0.4), -25px 0 0 -8px rgba(1, 65, 255, 0.2);
   }
   49% {
     left: 100%;
@@ -470,7 +479,7 @@ body {
   51% {
     left: 100%;
     transform: translateX(-100%);
-    box-shadow: -5px 0 0 -1px rgba(255, 179, 1, 0.9), 10px 0 0 -2px rgba(255, 179, 1, 0.8), 15px 0 0 -4px rgba(255, 179, 1, 0.6), 20px 0 0 -6px rgba(255, 179, 1, 0.4), 25px 0 0 -8px rgba(255, 179, 1, 0.2);
+    box-shadow: -5px 0 0 -5px rgba(1, 65, 255, 0.9), 10px 0 0 -2px rgba(1, 65, 255, 0.8), 15px 0 0 -4px rgba(1, 65, 255, 0.6), 20px 0 0 -6px rgba(1, 65, 255, 0.4), 25px 0 0 -8px rgba(1, 65, 255, 0.2);
   }
   100% {
     left: 0;

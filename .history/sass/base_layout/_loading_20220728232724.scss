@@ -6,7 +6,7 @@
    bottom: 0;
    right: 0;
    left: 0;
-   background-color: rgba(255, 255, 255, 0.9);
+   background-color: rgba(255, 255, 255, 0.885);
 }
 .child-loading {
    position: absolute;
@@ -21,7 +21,6 @@
    height: 32px;
    width: 200px;
    z-index: 10;
-   box-shadow: rgb(0, 0, 0) 0px 20px 30px -8px;
 }
 .child-loading:before {
    content: '';
