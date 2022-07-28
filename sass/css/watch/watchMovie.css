@@ -40,6 +40,9 @@
   font-size: 25px;
   vertical-align: middle;
 }
+.our-story-header .menu-list {
+  display: none;
+}
 
 .our-story-logo a {
   text-decoration: none;
@@ -62,6 +65,9 @@
   width: 70%;
 }
 
+.menu > ion-icon {
+  display: none;
+}
 .menu ul {
   display: flex;
   width: 100%;
@@ -69,7 +75,7 @@
 }
 .menu ul li {
   list-style-type: none;
-  padding: 17.5px 20px;
+  padding: 10px 20px;
   border: none;
   position: relative;
   font-weight: 700;
@@ -209,7 +215,7 @@
   justify-content: center;
 }
 .middle-page-mid-posters ul {
-  width: 80%;
+  width: 85%;
   height: 100%;
 }
 .middle-page-mid-posters ul li h2 {
@@ -242,7 +248,17 @@
   margin-bottom: 50px;
 }
 
-.small-slider {
+.small-slider > .slick-list > .slick-track {
+  margin: 0;
+}
+
+.gridLayout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-gap: 30px 20px;
+}
+
+.category-movie {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   grid-gap: 30px 20px;
@@ -261,34 +277,44 @@
   flex: 1;
 }
 
-.movie-swiper-slider > a {
-  color: white;
+.movie-swiper-slider a {
   text-decoration: none;
-  padding: 10px 0;
-  overflow: hidden;
 }
-
-.movie-swiper-slider:hover a img {
-  opacity: 0.5;
-  transform: scale(1.3);
-  transition: 0.7s;
-}
-
-.posters-movie {
+.movie-swiper-slider a .posters-movie {
   overflow: hidden;
   border-radius: 7px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
-.posters-movie a {
-  text-decoration: none;
-}
-.posters-movie a img {
+.movie-swiper-slider a .posters-movie img {
   width: 100%;
-  min-height: 215px;
+  height: 219px;
   border-radius: 7px;
   object-fit: cover;
   color: white;
+}
+.movie-swiper-slider a .title-movie {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.movie-swiper-slider a .title-movie p {
+  color: white;
+}
+
+.movie-swiper-slider:hover .posters-movie img {
+  opacity: 0.5;
+  transform: scale(1.3);
+  transition: 0.7s;
+}
+
+.slick-initialized .slick-slide {
+  margin: 0 10px;
 }
 
 .footer {
@@ -604,33 +630,51 @@ button {
   }
 }
 @media screen and (max-width: 1024px) {
+  .our-story-header > a {
+    display: flex;
+  }
+
+  .our-story-logo {
+    display: none;
+  }
+
   .navbar-menu {
-    width: 50%;
+    width: 100%;
+    align-items: center;
   }
 
   .menu {
-    margin-left: 20px;
     position: relative;
+    border: none;
   }
   .menu ul {
-    display: none;
+    align-items: center;
   }
-  .menu ul li a {
-    padding: 10px;
+  .menu ul li > a {
+    padding: 3.3px;
     display: block;
   }
-  .menu:hover span {
+  .menu ul li .list ul li a {
+    padding: 10px;
+  }
+  .menu ul li:hover span {
     background-color: rgba(136, 136, 136, 0.795);
   }
-  .menu:hover ul {
+  .menu ul li:hover ul {
     display: block;
     position: absolute;
-    width: 200px;
+    width: 100%;
     top: 165%;
-    left: 30%;
     background-color: #000000d0;
   }
+  .menu ul li:hover ul li {
+    padding: 0;
+    text-align: center;
+  }
 
+  .search {
+    justify-content: center;
+  }
   .search input {
     display: block;
   }
@@ -772,6 +816,83 @@ button {
     grid-template-columns: repeat(6, 1fr);
   }
 }
+@media screen and (max-width: 720px) {
+  .fixed-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(97, 97, 97, 0.732);
+  }
+
+  .menu {
+    position: fixed;
+    top: 0%;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    left: 0%;
+    height: 100%;
+    width: 45%;
+  }
+  .menu > ion-icon {
+    display: block;
+    color: white;
+    position: absolute;
+    right: 1%;
+    top: 1%;
+  }
+  .menu > ion-icon:active {
+    color: red;
+  }
+  .menu > ul {
+    flex-direction: column;
+    top: 8%;
+    padding: 0 20px;
+    position: absolute;
+    align-items: flex-start;
+  }
+  .menu > ul li {
+    background-color: rgba(255, 255, 255, 0) !important;
+  }
+  .menu > ul li:hover span {
+    background-color: rgba(255, 255, 255, 0) !important;
+  }
+  .menu > ul li:hover ul {
+    position: relative;
+    width: 100%;
+    background-color: #00000000;
+  }
+  .menu > ul li:hover ul li {
+    padding: 0;
+    text-align: initial;
+  }
+
+  .search {
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+  .search input {
+    display: block;
+  }
+
+  .menu-list {
+    cursor: pointer;
+    position: fixed;
+    z-index: 10;
+    display: block !important;
+  }
+  .menu-list ion-icon {
+    font-size: 35px;
+    color: white;
+  }
+
+  .menu .list {
+    position: relative;
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0) !important;
+  }
+}
 @media screen and (max-width: 570px) {
   .img-TheMovie {
     min-height: fit-content;
@@ -800,12 +921,15 @@ button {
   }
 
   .menu {
-    margin: 0;
+    position: fixed;
+    width: 50%;
   }
-  .menu ul {
+  .menu > ul {
+    flex-direction: column;
+    top: 8%;
+    padding: 0;
     position: absolute;
-    top: 165%;
-    left: 0% !important;
+    align-items: flex-start;
   }
 
   .page-top-content {
