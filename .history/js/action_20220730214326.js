@@ -14,8 +14,8 @@ btnScrollTop.addEventListener('click', () => {
    document.querySelector('.basicLayouts').scrollIntoView({ behavior: 'smooth' });
 });
 //click menu category
+const categories = document.querySelectorAll('.category ul li a');
 const getCategories = async () => {
-   const categories = document.querySelectorAll('.category ul li a');
    for (let i = 0; i < categories.length; i++) {
       categories[i].onclick = async () => {
          localStorage.setItem('getCategory', JSON.stringify(categories[i].textContent));
@@ -25,8 +25,8 @@ const getCategories = async () => {
 };
 getCategories();
 // click menu country
+const Countries = document.querySelectorAll('.country ul li a');
 const getCountryOfMovies = async () => {
-   const Countries = document.querySelectorAll('.country ul li a');
    for (let i = 0; i < Countries.length; i++) {
       Countries[i].onclick = async () => {
          localStorage.setItem('getCountry', JSON.stringify(Countries[i].textContent));
@@ -34,10 +34,9 @@ const getCountryOfMovies = async () => {
       };
    }
 };
-getCountryOfMovies();
+const categoriesSpan = document.querySelectorAll('.title a h2 span');
+const categoriesSecond = document.querySelectorAll('.title a');
 const getCategoriesSecond = async () => {
-   const categoriesSpan = document.querySelectorAll('.title a h2 span');
-   const categoriesSecond = document.querySelectorAll('.title a');
    for (let i = 0; i < categoriesSecond.length; i++) {
       categoriesSecond[i].onclick = async () => {
          localStorage.setItem('getCategory', JSON.stringify(categoriesSpan[i].textContent));

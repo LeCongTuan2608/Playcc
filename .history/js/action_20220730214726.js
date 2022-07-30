@@ -34,7 +34,7 @@ const getCountryOfMovies = async () => {
       };
    }
 };
-getCountryOfMovies();
+
 const getCategoriesSecond = async () => {
    const categoriesSpan = document.querySelectorAll('.title a h2 span');
    const categoriesSecond = document.querySelectorAll('.title a');

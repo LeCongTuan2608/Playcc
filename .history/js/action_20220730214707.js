@@ -27,6 +27,7 @@ getCategories();
 // click menu country
 const getCountryOfMovies = async () => {
    const Countries = document.querySelectorAll('.country ul li a');
+
    for (let i = 0; i < Countries.length; i++) {
       Countries[i].onclick = async () => {
          localStorage.setItem('getCountry', JSON.stringify(Countries[i].textContent));
@@ -34,7 +35,7 @@ const getCountryOfMovies = async () => {
       };
    }
 };
-getCountryOfMovies();
+
 const getCategoriesSecond = async () => {
    const categoriesSpan = document.querySelectorAll('.title a h2 span');
    const categoriesSecond = document.querySelectorAll('.title a');
