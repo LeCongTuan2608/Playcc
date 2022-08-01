@@ -27,7 +27,7 @@
   height: 100%;
   padding: 0 40px;
 }
-.our-story-header > a {
+.our-story-header > span {
   text-decoration: none;
   color: white;
   padding: 10px 20px;
@@ -35,6 +35,9 @@
   background-color: #d84b4b;
   cursor: pointer;
   user-select: none;
+}
+.our-story-header > span:active {
+  background-color: #20a61c;
 }
 .our-story-header ion-icon {
   font-size: 25px;
@@ -68,6 +71,9 @@
 .menu > ion-icon {
   display: none;
 }
+.menu .logo {
+  display: none;
+}
 .menu ul {
   display: flex;
   width: 100%;
@@ -75,7 +81,7 @@
 }
 .menu ul li {
   list-style-type: none;
-  padding: 10px 20px;
+  padding: 15px 20px;
   border: none;
   position: relative;
   font-weight: 700;
@@ -515,7 +521,7 @@ button {
   }
 }
 @media screen and (max-width: 1024px) {
-  .our-story-header > a {
+  .our-story-header > span {
     display: flex;
   }
 
@@ -608,7 +614,7 @@ button {
   .our-story-header .our-story-logo a span {
     margin-left: -5px;
   }
-  .our-story-header > a {
+  .our-story-header > span {
     padding: 5px 10px;
   }
 
@@ -715,10 +721,10 @@ button {
   .menu {
     position: fixed;
     top: 0%;
-    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    background-image: linear-gradient(171.8deg, #056f92 13.5%, #063954 78.6%);
     left: 0%;
     height: 100%;
-    width: 45%;
+    width: 40%;
   }
   .menu > ion-icon {
     display: block;
@@ -730,10 +736,22 @@ button {
   .menu > ion-icon:active {
     color: red;
   }
+  .menu .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 30px;
+    color: white;
+  }
+  .menu .logo ion-icon {
+    font-size: 35px;
+  }
   .menu > ul {
     flex-direction: column;
     top: 8%;
-    padding: 0 20px;
+    margin: 15px 0;
+    padding: 0 15px;
     position: absolute;
     align-items: flex-start;
   }
@@ -764,7 +782,6 @@ button {
   .menu-list {
     cursor: pointer;
     position: fixed;
-    z-index: 10;
     display: block !important;
   }
   .menu-list ion-icon {
@@ -774,17 +791,11 @@ button {
 
   .menu .list {
     position: relative;
-    margin-left: 10px;
+    margin: 15px 0 10px 20px;
     background-color: rgba(255, 255, 255, 0) !important;
   }
-}
-@media screen and (max-width: 570px) {
-  .img-TheMovie {
-    min-height: fit-content;
-  }
-
-  .ep-container ul {
-    grid-template-columns: repeat(5, 1fr);
+  .menu .list li {
+    margin: 8px 0;
   }
 }
 @media screen and (max-width: 425px) {
@@ -810,11 +821,7 @@ button {
     width: 50%;
   }
   .menu > ul {
-    flex-direction: column;
-    top: 8%;
     padding: 0;
-    position: absolute;
-    align-items: flex-start;
   }
 
   .page-top-content {
