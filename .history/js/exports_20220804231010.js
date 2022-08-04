@@ -92,7 +92,8 @@ export const renderListMovie = async (data, listSelector) => {
 
    let htmls = data.map((items) => {
       let thum_url = '';
-      if (!items.movie.thumb_url) {
+      let a = '';
+      if (a) {
          thum_url = 'https://bom.so/54ttlR';
       } else {
          thum_url = items.movie.thumb_url;
