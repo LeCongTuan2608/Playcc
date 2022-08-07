@@ -13,7 +13,6 @@ const validate = (options) => {
          errorMessage = rules[i](inputElement.value);
          if (errorMessage) break;
       }
-      //style khi gặp lỗi
       if (errorMessage) {
          errorElement.innerText = errorMessage;
          inputElement.parentElement.classList.add('in-valid');
@@ -24,7 +23,6 @@ const validate = (options) => {
    };
    const formElement = document.querySelector(options.form);
    if (formElement) {
-      // lưu rule vào [...]
       options.rules.forEach((rule) => {
          if (Array.isArray(selectorRules[rule.selector])) {
             selectorRules[rule.selector].push(rule.checked);
@@ -56,7 +54,6 @@ validate.isRequired = (selector) => {
       },
    };
 };
-//định nghĩa method
 validate.isEmail = (selector) => {
    return {
       selector: selector,
@@ -68,11 +65,11 @@ validate.isEmail = (selector) => {
 };
 
 //định nghĩa method
-validate.isPassword = (selector, minLength) => {
+validate.isPassword = (selector) => {
    return {
       selector: selector,
       checked: (value) => {
-         return value.length >= minLength ? undefined : `Password phải tối thiểu ${minLength} kí tự`;
+         return value.trim() ? undefined : 'Password phải tối đa 6 kí tự';
       },
    };
 };
@@ -84,6 +81,6 @@ validate({
       validate.isRequired('#email'),
       validate.isEmail('#email'),
       validate.isRequired('#password'),
-      validate.isPassword('#password', 6),
+      validate.isPassword('#password'),
    ],
 });

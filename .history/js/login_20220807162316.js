@@ -8,12 +8,12 @@ const validate = (options) => {
       const errorElement = inputElement.parentElement.querySelector(options.errorSelector);
       let errorMessage;
       let rules = selectorRules[rule.selector];
+      console.log(rules);
       //lặp và kiểm tra lỗi
       for (let i = 0; i < rules.length; i++) {
          errorMessage = rules[i](inputElement.value);
          if (errorMessage) break;
       }
-      //style khi gặp lỗi
       if (errorMessage) {
          errorElement.innerText = errorMessage;
          inputElement.parentElement.classList.add('in-valid');
@@ -24,7 +24,6 @@ const validate = (options) => {
    };
    const formElement = document.querySelector(options.form);
    if (formElement) {
-      // lưu rule vào [...]
       options.rules.forEach((rule) => {
          if (Array.isArray(selectorRules[rule.selector])) {
             selectorRules[rule.selector].push(rule.checked);
@@ -56,7 +55,6 @@ validate.isRequired = (selector) => {
       },
    };
 };
-//định nghĩa method
 validate.isEmail = (selector) => {
    return {
       selector: selector,
@@ -72,7 +70,7 @@ validate.isPassword = (selector, minLength) => {
    return {
       selector: selector,
       checked: (value) => {
-         return value.length >= minLength ? undefined : `Password phải tối thiểu ${minLength} kí tự`;
+         return value.length >= minLength ? undefined : `Password phải tối đa ${minLength} kí tự`;
       },
    };
 };

@@ -2,18 +2,9 @@
 //code : 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
 
 const validate = (options) => {
-   let selectorRules = {};
-   // hàm thực hiện validate
    const validator = (inputElement, rule) => {
       const errorElement = inputElement.parentElement.querySelector(options.errorSelector);
-      let errorMessage;
-      let rules = selectorRules[rule.selector];
-      //lặp và kiểm tra lỗi
-      for (let i = 0; i < rules.length; i++) {
-         errorMessage = rules[i](inputElement.value);
-         if (errorMessage) break;
-      }
-      //style khi gặp lỗi
+      let errorMessage = rule.checked(inputElement.value);
       if (errorMessage) {
          errorElement.innerText = errorMessage;
          inputElement.parentElement.classList.add('in-valid');
@@ -24,14 +15,7 @@ const validate = (options) => {
    };
    const formElement = document.querySelector(options.form);
    if (formElement) {
-      // lưu rule vào [...]
       options.rules.forEach((rule) => {
-         if (Array.isArray(selectorRules[rule.selector])) {
-            selectorRules[rule.selector].push(rule.checked);
-         } else {
-            selectorRules[rule.selector] = [rule.checked];
-         }
-         // xử lí khi blur ra khỏi input
          const inputElement = formElement.querySelector(rule.selector);
          if (inputElement) {
             inputElement.addEventListener('blur', () => {
@@ -56,7 +40,6 @@ validate.isRequired = (selector) => {
       },
    };
 };
-//định nghĩa method
 validate.isEmail = (selector) => {
    return {
       selector: selector,
@@ -68,11 +51,11 @@ validate.isEmail = (selector) => {
 };
 
 //định nghĩa method
-validate.isPassword = (selector, minLength) => {
+validate.isPassword = (selector) => {
    return {
       selector: selector,
       checked: (value) => {
-         return value.length >= minLength ? undefined : `Password phải tối thiểu ${minLength} kí tự`;
+         return value.trim() ? undefined : 'Password phải tối đa 6 kí tự';
       },
    };
 };
@@ -80,10 +63,5 @@ validate.isPassword = (selector, minLength) => {
 validate({
    form: '.form-login',
    errorSelector: '.message',
-   rules: [
-      validate.isRequired('#email'),
-      validate.isEmail('#email'),
-      validate.isRequired('#password'),
-      validate.isPassword('#password', 6),
-   ],
+   rules: [validate.isRequired('#email').validate.isEmail('#email'), validate.isPassword('#password')],
 });
