@@ -129,8 +129,8 @@ async function getMovieInforFromApi() {
    try {
       const response = await fetch(`${urlMovie + getID}`);
       const data_movie = await response.json();
+
       const urlVideo = data_movie.episodes[0].server_data[0].link_embed;
-      console.log(data_movie);
       await renderIMGMovie(data_movie);
       await renderContentMovie(data_movie);
       await renderPublisher(data_movie);
@@ -145,7 +145,6 @@ async function getMovieInforFromApi() {
 }
 
 const main = async () => {
-   await showLoading();
    await getMovieInforFromApi();
    await hideLoading();
 };

@@ -4,7 +4,6 @@ import { renderListMovie } from './exports.js';
 import { sliderPosters, sliderMovie } from './exports.js';
 import { getMovie } from './exports.js';
 //
-// const loading = (document.querySelector('.loading').style.display = 'block');
 const slidePosterStart = async () => {
    sliderPosters('.middle-page-mid-posters ul');
 };
@@ -32,28 +31,19 @@ const renderPosterSlider = async (data, listSelector) => {
 // lọc thể loại phim
 export async function filterCategory(listMovie, nameCategory, listSelector) {
    const arrayListMovies = [];
-   // const lengthMovie = listMovie.length;
-   listMovie.map((item) => {
-      if (nameCategory == 'Hoạt Hình' && item.movie.type == 'hoathinh') {
-         arrayListMovies.push(item);
+   const lengthMovie = listMovie.length;
+   for (let i = 0; i < lengthMovie; i++) {
+      const cate = listMovie[i].movie.category;
+      const cateLength = cate.length;
+      if (nameCategory == 'Hoạt Hình' && listMovie[i].movie.type == 'hoathinh') {
+         arrayListMovies.push(listMovie[i]);
       }
-      item.movie.category.map((itemNameCate) => itemNameCate.name).includes(nameCategory) &&
-         item.movie.type !== 'hoathinh' &&
-         arrayListMovies.push(item);
-   });
-
-   // for (let i = 0; i < lengthMovie; i++) {
-   //    const cate = listMovie[i].movie.category;
-   //    const cateLength = cate.length;
-   //    if (nameCategory == 'Hoạt Hình' && listMovie[i].movie.type == 'hoathinh') {
-   //       arrayListMovies.push(listMovie[i]);
-   //    }
-   //    for (let j = 0; j < cateLength; j++) {
-   //       if (cate[j].name == nameCategory && listMovie[i].movie.type !== 'hoathinh') {
-   //          arrayListMovies.push(listMovie[i]);
-   //       }
-   //    }
-   // }
+      for (let j = 0; j < cateLength; j++) {
+         if (cate[j].name == nameCategory && listMovie[i].movie.type !== 'hoathinh') {
+            arrayListMovies.push(listMovie[i]);
+         }
+      }
+   }
    const getArrMovies15 = arrayListMovies.slice(0, 20);
    await renderListMovie(getArrMovies15, listSelector);
 }
@@ -61,17 +51,12 @@ export async function filterCategory(listMovie, nameCategory, listSelector) {
 const arrayList = [];
 async function getMovieInforFromApi(movie) {
    try {
-      movie.map(async (item) => {
-         const response = await fetch(`${urlMovie + item.slug}`);
+      const lengthMovie = movie.length;
+      for (let i = 0; i < lengthMovie; i++) {
+         const response = await fetch(`${urlMovie + movie[i].slug}`);
          const data_movie = await response.json();
          arrayList.push(data_movie); //thêm items vào array
-      });
-      // const lengthMovie = movie.length;
-      // for (let i = 0; i < lengthMovie; i++) {
-      //    const response = await fetch(`${urlMovie + movie[i].slug}`);
-      //    const data_movie = await response.json();
-      //    arrayList.push(data_movie); //thêm items vào array
-      // }
+      }
       await renderPosterSlider(arrayList, '.middle-page-mid-posters ul');
       //filterCategory(arrayList, 'Thể loại phim', 'nơi render')
       await filterCategory(arrayList, 'Hành Động', '.category-action');
@@ -94,7 +79,6 @@ export async function getMoviePageFromApi(page) {
    try {
       const response = await fetch(`${urlPage + page}`);
       const data = await response.json();
-      // console.log(data);
       await getMovieInforFromApi(data.items);
    } catch (error) {
       console.error({ error });
@@ -122,6 +106,7 @@ const loadPoster = async () => {
 };
 //main
 const main = async () => {
+   await showLoading();
    for (let index = 1; index <= 8; index++) {
       let randomNumber = Math.floor(Math.random() * 300) + 4;
       await getMoviePageFromApi(randomNumber);

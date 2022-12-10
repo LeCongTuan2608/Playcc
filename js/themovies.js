@@ -30,38 +30,52 @@ renderTitle();
 //lọc thể loại
 const filterTheMovies = async (listMovie, listSelector) => {
    const arrayListMovie = [];
-   const lengthMovie = listMovie.length;
+   // const lengthMovie = listMovie.length;
    if (getCategory !== '') {
-      for (let i = 0; i < lengthMovie; i++) {
-         const cate = listMovie[i].movie.category;
-         const cateLength = cate.length;
-         if (getCategory == 'Hoạt Hình' && listMovie[i].movie.type == 'hoathinh') {
-            arrayListMovie.push(listMovie[i]);
-         }
-         for (let j = 0; j < cateLength; j++) {
-            if (cate[j].name == getCategory && listMovie[i].movie.type !== 'hoathinh') {
-               arrayListMovie.push(listMovie[i]);
-            }
-         }
-      }
+      listMovie.map((item) => {
+         if (getCategory == 'Hoạt Hình' && item.movie.type == 'hoathinh') arrayListMovie.push(item);
+         item.movie.category.map((itemNameCate) => itemNameCate.name).includes(getCategory) &&
+            item.movie.type !== 'hoathinh' &&
+            arrayListMovie.push(item);
+      });
+
+      // for (let i = 0; i < lengthMovie; i++) {
+      //    const cate = listMovie[i].movie.category;
+      //    const cateLength = cate.length;
+      //    if (getCategory == 'Hoạt Hình' && listMovie[i].movie.type == 'hoathinh') {
+      //       arrayListMovie.push(listMovie[i]);
+      //    }
+      //    for (let j = 0; j < cateLength; j++) {
+      //       if (cate[j].name == getCategory && listMovie[i].movie.type !== 'hoathinh') {
+      //          arrayListMovie.push(listMovie[i]);
+      //       }
+      //    }
+      // }
    } else if (getCountry !== '') {
-      for (let i = 0; i < lengthMovie; i++) {
-         const country = listMovie[i].movie.country;
-         const countryLength = country.length;
-         for (let j = 0; j < countryLength; j++) {
-            if (country[j].name == getCountry) {
-               arrayListMovie.push(listMovie[i]);
-            }
-         }
-      }
+      listMovie.map((item) => {
+         item.movie.country.map((countryItem) => countryItem.name).includes(getCountry) &&
+            arrayListMovie.push(item);
+      });
+      // for (let i = 0; i < lengthMovie; i++) {
+      //    const country = listMovie[i].movie.country;
+      //    const countryLength = country.length;
+      //    for (let j = 0; j < countryLength; j++) {
+      //       if (country[j].name == getCountry) {
+      //          arrayListMovie.push(listMovie[i]);
+      //       }
+      //    }
+      // }
    } else {
-      for (let i = 0; i < lengthMovie; i++) {
-         const year = listMovie[i].movie.year;
-         if (year == getYear) {
-            console.log(listMovie[i]);
-            arrayListMovie.push(listMovie[i]);
-         }
-      }
+      listMovie.map((item) => {
+         if (item.movie.year == getYear) arrayListMovie.push(item);
+      });
+      // for (let i = 0; i < lengthMovie; i++) {
+      //    const year = listMovie[i].movie.year;
+      //    if (year == getYear) {
+      //       console.log(listMovie[i]);
+      //       arrayListMovie.push(listMovie[i]);
+      //    }
+      // }
    }
    await renderListMovie(arrayListMovie, listSelector);
 };
@@ -69,12 +83,17 @@ const filterTheMovies = async (listMovie, listSelector) => {
 const arrayList = [];
 async function getMovieInforFromApi(movie) {
    try {
-      const lengthMovie = movie.length;
-      for (let i = 0; i < lengthMovie; i++) {
-         const response = await fetch(`${urlMovie + movie[i].slug}`);
+      movie.map(async (item) => {
+         const response = await fetch(`${urlMovie + item.slug}`);
          const data_movie = await response.json();
          arrayList.push(data_movie); //thêm items vào array
-      }
+      });
+      // const lengthMovie = movie.length;
+      // for (let i = 0; i < lengthMovie; i++) {
+      //    const response = await fetch(`${urlMovie + movie[i].slug}`);
+      //    const data_movie = await response.json();
+      //    arrayList.push(data_movie); //thêm items vào array
+      // }
       await filterTheMovies(arrayList, '.category-movie');
    } catch (error) {
       console.error({ error });
@@ -95,7 +114,6 @@ const loadFooter = async () => {
    footer.style.display = 'block';
 };
 const getTheMovies = async () => {
-   await showLoading();
    for (let i = 0; i <= 10; i++) {
       await getMoviePageFromApi(i);
    }

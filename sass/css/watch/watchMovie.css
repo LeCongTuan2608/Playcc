@@ -7,7 +7,7 @@
 
 .out-fixed {
   position: fixed;
-  background-color: #000000ac;
+  background-color: rgba(0, 0, 0, 0.6745098039);
   transition: 1s linear;
   animation: top-down ease-in 0.3s;
 }
@@ -32,12 +32,12 @@
   color: white;
   padding: 10px 20px;
   border-radius: 7px;
-  background-color: #d84b4b;
+  background-color: rgb(216, 75, 75);
   cursor: pointer;
   user-select: none;
 }
 .our-story-header > span:active {
-  background-color: #20a61c;
+  background-color: rgb(32, 166, 28);
 }
 .our-story-header ion-icon {
   font-size: 25px;
@@ -96,7 +96,7 @@
   color: white;
 }
 .menu ul li:hover {
-  background-color: #939393c8;
+  background-color: rgba(147, 147, 147, 0.7843137255);
 }
 .menu ul li:hover > a,
 .menu ul li:hover > span {
@@ -134,12 +134,12 @@
   width: 60%;
   border: none;
   border-radius: 7px;
-  background-color: #9484845c;
+  background-color: rgba(148, 132, 132, 0.3607843137);
   padding: 10px 10px;
   color: white;
 }
 .search input::placeholder {
-  color: #d2d2d2;
+  color: rgb(210, 210, 210);
 }
 .search input:focus {
   border-color: rgba(164, 164, 164, 0.71);
@@ -151,7 +151,7 @@
   cursor: pointer;
 }
 .search ion-icon:active {
-  color: #d84b4b;
+  color: rgb(216, 75, 75);
   background-color: rgba(210, 210, 210, 0.416);
   border-radius: 6px;
 }
@@ -163,7 +163,7 @@
 .middle-page-top {
   position: relative;
   padding-top: 50%;
-  border-bottom: 5px solid #000000f2;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.9490196078);
 }
 
 .page-top-bgr {
@@ -186,7 +186,7 @@
 }
 
 .bgr-opacity {
-  background-image: linear-gradient(180deg, rgba(249, 249, 249, 0) 0%, #000000d0 100%);
+  background-image: linear-gradient(180deg, rgba(249, 249, 249, 0) 0%, rgba(0, 0, 0, 0.8156862745) 100%);
   opacity: 0.5;
   z-index: 2;
   width: 100%;
@@ -343,7 +343,7 @@
   text-decoration: none;
 }
 .footer-navigation-row a:active {
-  color: #dd7717;
+  color: rgb(221, 119, 23);
 }
 .footer-navigation-row a ion-icon {
   vertical-align: middle;
@@ -385,11 +385,11 @@ body {
   height: 100%;
   font-size: 100%;
   font-family: Netflix Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-  background-color: #000000eb;
+  background-color: rgba(0, 0, 0, 0.9215686275);
 }
 
 .our-story-header-wrapper {
-  background-color: #000000ac;
+  background-color: rgba(0, 0, 0, 0.6745098039);
 }
 
 .our-body {
@@ -409,7 +409,7 @@ body {
   display: flex;
   margin-bottom: 80px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #2f9cbb;
+  border-bottom: 2px solid rgb(47, 156, 187);
 }
 
 .img-TheMovie {
@@ -506,7 +506,7 @@ body {
   grid-gap: 10px 10px;
 }
 .ep-container ul li {
-  background-color: #7e7e7e;
+  background-color: rgb(126, 126, 126);
   padding: 10px 0;
   border-radius: 7px;
   text-align: center;
@@ -518,21 +518,21 @@ body {
   font-weight: 600;
 }
 .ep-container ul li:hover {
-  background-color: #94be40 !important;
+  background-color: rgb(148, 190, 64) !important;
 }
 .ep-container ul li:hover span {
   color: black;
 }
 
 .eps-active {
-  background-color: #94be40 !important;
+  background-color: rgb(148, 190, 64) !important;
 }
 .eps-active span {
   color: black !important;
 }
 
 .loading {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 11;
   top: 0;
@@ -550,12 +550,12 @@ body {
   display: block;
   box-sizing: border-box;
   overflow: hidden;
-  border: 2px solid #3b83a4;
+  border: 2px solid rgb(59, 131, 164);
   border-radius: 20px;
   height: 32px;
   width: 200px;
   z-index: 10;
-  box-shadow: black 0px 20px 30px -8px;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -8px;
 }
 
 .child-loading:before {
@@ -566,7 +566,7 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+  background-image: linear-gradient(225deg, rgb(255, 60, 172) 0%, rgb(120, 75, 160) 50%, rgb(43, 134, 197) 100%);
   animation: ballbns 3s ease-in-out infinite;
 }
 
@@ -635,12 +635,10 @@ button {
   .page-top-content {
     font-size: 25px;
   }
-
   .home-category-highlights {
     margin: 50px 0 50px;
     padding: 0 5%;
   }
-
   .category-list {
     padding: 0 5%;
   }
@@ -649,16 +647,13 @@ button {
   .our-story-header > span {
     display: flex;
   }
-
   .our-story-logo {
     display: none;
   }
-
   .navbar-menu {
     width: 100%;
     align-items: center;
   }
-
   .menu {
     position: relative;
     border: none;
@@ -681,46 +676,38 @@ button {
     position: absolute;
     width: 100%;
     top: 165%;
-    background-color: #000000d0;
+    background-color: rgba(0, 0, 0, 0.8156862745);
   }
   .menu ul li:hover ul li {
     padding: 0;
     text-align: center;
   }
-
   .search {
     justify-content: center;
   }
   .search input {
     display: block;
   }
-
   .page-top-content {
     font-size: 20px;
   }
-
   .middle-page-mid-posters ul {
     width: 100%;
     height: 100%;
   }
-
   .home-category-highlights {
     margin: 50px 0 50px;
     padding: 0 2%;
   }
-
   .category-list {
     padding: 0 2%;
   }
-
   .movie-content {
     flex: 33.3333333333%;
   }
-
   .infor-publisher {
     flex: 20%;
   }
-
   .ep-container ul {
     grid-template-columns: repeat(8, 1fr);
   }
@@ -742,48 +729,38 @@ button {
   .our-story-header > span {
     padding: 5px 10px;
   }
-
   .search input {
     display: none;
   }
-
   .page-top-content {
     font-size: 60%;
   }
-
   h2 {
     font-size: 17px;
   }
-
   .middle-page-mid-posters ul {
     width: 100%;
     height: 100%;
   }
-
   .home-category-highlights {
     margin: 50px 0 50px;
     padding: 0;
   }
-
   .middle-page-mid {
     padding: 3%;
   }
-
   .footer {
     padding: 0;
   }
-
   .footer-navigation-row {
     flex-direction: column;
   }
-
   .footer-column-left {
     flex-direction: row;
     justify-content: space-around;
     padding: 20px 0;
     border-bottom: 2px solid rgba(40, 40, 40, 0.829);
   }
-
   .footer-column-center {
     margin: 20px 0;
   }
@@ -791,28 +768,22 @@ button {
     text-align: center;
     padding: 0 20px;
   }
-
   .footer-column-right {
     align-items: center;
   }
-
   .body-category {
     padding: 100px 3%;
   }
-
   .category-list {
     padding: 0;
   }
-
   .body-container {
     padding: 100px 5%;
   }
-
   .infor-movie {
     display: block;
     margin-bottom: 50px;
   }
-
   .movie-content {
     position: relative;
     padding: 0;
@@ -823,11 +794,9 @@ button {
     top: -25%;
     z-index: 5;
   }
-
   .infor-publisher {
     gap: 5px 0;
   }
-
   .ep-container ul {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -842,11 +811,10 @@ button {
     left: 0;
     background-color: rgba(97, 97, 97, 0.732);
   }
-
   .menu {
     position: fixed;
     top: 0%;
-    background-image: linear-gradient(171.8deg, #056f92 13.5%, #063954 78.6%);
+    background-image: linear-gradient(171.8deg, rgb(5, 111, 146) 13.5%, rgb(6, 57, 84) 78.6%);
     left: 0%;
     height: 100%;
     width: 40%;
@@ -889,13 +857,12 @@ button {
   .menu > ul li:hover ul {
     position: relative;
     width: 100%;
-    background-color: #00000000;
+    background-color: rgba(0, 0, 0, 0);
   }
   .menu > ul li:hover ul li {
     padding: 0;
     text-align: initial;
   }
-
   .search {
     justify-content: flex-end;
     margin-right: 20px;
@@ -903,7 +870,6 @@ button {
   .search input {
     display: block;
   }
-
   .menu-list {
     cursor: pointer;
     position: fixed;
@@ -913,7 +879,6 @@ button {
     font-size: 35px;
     color: white;
   }
-
   .menu .list {
     position: relative;
     margin: 15px 0 10px 20px;
@@ -940,7 +905,6 @@ button {
   .our-story-header > a {
     padding: 5px 5px;
   }
-
   .menu {
     position: fixed;
     width: 50%;
@@ -948,11 +912,9 @@ button {
   .menu > ul {
     padding: 0;
   }
-
   .page-top-content {
     font-size: 60%;
   }
-
   .movie-content {
     position: relative;
     padding: 0;
@@ -960,7 +922,6 @@ button {
   .movie-content .content {
     padding: 20px 0;
   }
-
   .ep-container ul {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -969,20 +930,16 @@ button {
   .our-story-header {
     padding: 0 10px;
   }
-
   .menu ul li a {
     padding: 5px;
   }
-
   .search ion-icon {
     margin-left: 0px;
     margin-right: 5px;
   }
-
   .page-top-content {
     font-size: 50%;
   }
-
   .ep-container ul {
     grid-template-columns: repeat(3.5, 1fr);
   }
