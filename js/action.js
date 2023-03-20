@@ -34,13 +34,14 @@ getCategories();
 const getCountryOfMovies = async () => {
    const Countries = document.querySelectorAll('.country ul li a');
    for (let i = 0; i < Countries.length; i++) {
-      Countries[i].onclick = async () => {
+      Countries[i].onclick = async (e) => {
          localStorage.setItem('getCountry', JSON.stringify(Countries[i].textContent));
          localStorage.setItem('getCategory', JSON.stringify(''));
          localStorage.setItem('getYear', JSON.stringify(''));
       };
    }
 };
+getCountryOfMovies();
 // click menu year
 const getYearOfMovies = async () => {
    const Year = document.querySelectorAll('.year ul li a');
