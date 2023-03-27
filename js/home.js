@@ -42,18 +42,6 @@ export async function filterCategory(listMovie, nameCategory, listSelector) {
          arrayListMovies.push(item);
    });
 
-   // for (let i = 0; i < lengthMovie; i++) {
-   //    const cate = listMovie[i].movie.category;
-   //    const cateLength = cate.length;
-   //    if (nameCategory == 'Hoạt Hình' && listMovie[i].movie.type == 'hoathinh') {
-   //       arrayListMovies.push(listMovie[i]);
-   //    }
-   //    for (let j = 0; j < cateLength; j++) {
-   //       if (cate[j].name == nameCategory && listMovie[i].movie.type !== 'hoathinh') {
-   //          arrayListMovies.push(listMovie[i]);
-   //       }
-   //    }
-   // }
    const getArrMovies15 = arrayListMovies.slice(0, 20);
    await renderListMovie(getArrMovies15, listSelector);
 }
@@ -66,14 +54,8 @@ async function getMovieInforFromApi(movie) {
          const data_movie = await response.json();
          arrayList.push(data_movie); //thêm items vào array
       });
-      // const lengthMovie = movie.length;
-      // for (let i = 0; i < lengthMovie; i++) {
-      //    const response = await fetch(`${urlMovie + movie[i].slug}`);
-      //    const data_movie = await response.json();
-      //    arrayList.push(data_movie); //thêm items vào array
-      // }
       await renderPosterSlider(arrayList, '.middle-page-mid-posters ul');
-      //filterCategory(arrayList, 'Thể loại phim', 'nơi render')
+      //filterCategory(array, 'Thể loại phim', 'nơi render')
       await filterCategory(arrayList, 'Hành Động', '.category-action');
       await filterCategory(arrayList, 'Viễn Tưởng', '.category-ScienceFiction');
       await filterCategory(arrayList, 'Hình Sự', '.category-rime');
@@ -94,7 +76,7 @@ export async function getMoviePageFromApi(page) {
    try {
       const response = await fetch(`${urlPage + page}`);
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       await getMovieInforFromApi(data.items);
    } catch (error) {
       console.error({ error });
